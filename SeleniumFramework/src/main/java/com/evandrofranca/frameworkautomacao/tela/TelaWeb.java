@@ -1,4 +1,4 @@
-package tela;
+package com.evandrofranca.frameworkautomacao.tela;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -7,8 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import driver.DriverFactory;
-import utils.XPath;
+import com.evandrofranca.frameworkautomacao.driver.DriverFactory;
+import com.evandrofranca.frameworkautomacao.utils.XPath;
 
 public class TelaWeb {
 	
@@ -39,7 +39,7 @@ public class TelaWeb {
 			System.out.println("Erro ao recuperar Elemento\n" +e.getMessage());
 			throw e;
 		}
-		//return driver.findElement(By.xpath(XPath.montar(tipo, atributo, valor)));
+		
 	}
 	
 	private void highlight(WebElement element, int segundos_duracao) throws InterruptedException	{

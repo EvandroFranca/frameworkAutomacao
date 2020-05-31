@@ -1,4 +1,4 @@
-package modelo;
+package com.evandrofranca.frameworkautomacao.modelo;
 
 import org.junit.Test;
 

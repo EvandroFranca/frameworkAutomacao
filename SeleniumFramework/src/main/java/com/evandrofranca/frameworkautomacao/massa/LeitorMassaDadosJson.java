@@ -1,4 +1,4 @@
-package massa;
+package com.evandrofranca.frameworkautomacao.massa;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -6,9 +6,8 @@ import java.io.InputStreamReader;
 
 import org.json.JSONObject;
 
+import com.evandrofranca.frameworkautomacao.modelo.CasoTeste;
 import com.google.common.base.Strings;
-
-import modelo.CasoTeste;
 
 public class LeitorMassaDadosJson {
 	

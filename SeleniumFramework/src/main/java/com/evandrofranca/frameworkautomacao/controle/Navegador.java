@@ -1,4 +1,4 @@
-package controle;
+package com.evandrofranca.frameworkautomacao.controle;
 
 public enum Navegador {
 	

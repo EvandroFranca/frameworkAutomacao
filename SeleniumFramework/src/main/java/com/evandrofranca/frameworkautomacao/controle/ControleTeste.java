@@ -1,13 +1,11 @@
-package controle;
+package com.evandrofranca.frameworkautomacao.controle;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import com.google.common.base.CaseFormat;
-
-import driver.DriverFactory;
-import massa.LeitorMassaDadosJson;
+import com.evandrofranca.frameworkautomacao.driver.DriverFactory;
+import com.evandrofranca.frameworkautomacao.massa.LeitorMassaDadosJson;
 
 public class ControleTeste {
 	
@@ -87,12 +85,6 @@ public class ControleTeste {
 			throw e;
 		}
 		
-		
-		/*
-		 * if(navegador.equals("chrome")) { try { encerrarProcesso("chrome.exe");
-		 * encerrarProcesso("chromedriver.exe"); } catch (IOException e) {}
-		 * DriverFactory.getInstance().setChromeDriver(url); }
-		 */
 	}
 	
 	public static void fecharBrowser() {

@@ -1,4 +1,4 @@
-package utils;
+package com.evandrofranca.frameworkautomacao.utils;
 
 public class XPath {
 	
