@@ -1,11 +1,15 @@
 package modelo;
 
+import static org.junit.Assert.assertFalse;
+
 import java.util.regex.Pattern;
+
+import org.junit.Test;
 
 import com.google.common.base.Strings;
 
 
-public class CasoTesteBase {
+public abstract class CasoTeste implements ICasoTeste{
 	
 	private static String caminhoCompletoClasseTeste = "";
 	private static String nomeClasseTeste = "";
@@ -50,5 +54,20 @@ public class CasoTesteBase {
 		nomeClasseTeste = strNomeClasseTeste;
 		caminhoCompletoClasseTeste = nomeCaminhoClasseTeste;
 	}
-
+	
+	@Override
+	public abstract void executarCasoTeste() throws Exception;
+	
+	@Override
+	@Test
+	public void iniciarCasoTeste() {
+		try {
+			System.out.println("Iniciando execução do caso de teste");
+			this.executarCasoTeste();
+			System.out.println("Caso de teste finalizado com sucesso");
+		}catch(Exception e) {
+			System.err.println("Falha na execução do caso de teste");
+			assertFalse(true);
+		}
+	}
 }

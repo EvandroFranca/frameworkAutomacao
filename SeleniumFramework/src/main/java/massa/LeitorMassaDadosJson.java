@@ -8,7 +8,7 @@ import org.json.JSONObject;
 
 import com.google.common.base.Strings;
 
-import modelo.CasoTesteBase;
+import modelo.CasoTeste;
 
 public class LeitorMassaDadosJson {
 	
@@ -41,10 +41,10 @@ public class LeitorMassaDadosJson {
 		}
 		
 		if(Strings.isNullOrEmpty(nomeCasoTeste)) {
-			nomeCasoTeste = CasoTesteBase.recuperarNomeClasseTeste();
+			nomeCasoTeste = CasoTeste.recuperarNomeClasseTeste();
 		}
 		
-		caminhoCasoTeste = CasoTesteBase.recuperarCaminhoClasseTeste();
+		caminhoCasoTeste = CasoTeste.recuperarCaminhoClasseTeste();
 		
 		try {
 			BufferedReader arquivoJsonMemoria = new BufferedReader(new InputStreamReader(buscarArquivoMassa(caminhoCasoTeste, nomeCasoTeste.replace(".java", "")), "UTF-8"));
