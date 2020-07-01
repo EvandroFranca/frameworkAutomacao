@@ -28,6 +28,10 @@ public class TelaWeb {
 		return recuperarElemento(By.xpath(XPath.montar(tipo, atributo, valor, index)));
 	}
 	
+	public WebElement recuperarElemento(String xpath) throws Exception {
+		return recuperarElemento(By.xpath(xpath));
+	}
+	
 	private WebElement recuperarElemento(By by) throws Exception {
 		
 		try {

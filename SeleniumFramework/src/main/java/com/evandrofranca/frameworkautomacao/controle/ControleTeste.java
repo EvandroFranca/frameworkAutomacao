@@ -11,6 +11,8 @@ public class ControleTeste {
 	
 	private static ControleTeste instancia;
 	protected static String navegador;
+	protected static String processoNavegador;
+	protected static String processoDriver;
 	private LeitorMassaDadosJson leitorMassaDados;
 	
 	public static ControleTeste recuperarInstancia() {
@@ -24,18 +26,26 @@ public class ControleTeste {
 		switch (navegador) {
 		case CHROME:
 			ControleTeste.navegador = "chrome";
+			ControleTeste.processoNavegador = "chrome.exe";
+			ControleTeste.processoDriver = "chromedriver.exe";
 			break;
 			
 		case FIREFOX:
 			ControleTeste.navegador = "firefox";
+			ControleTeste.processoNavegador = "firefox.exe";
+			ControleTeste.processoDriver = "geckodriver.exe";
 			break;
 			
 		case EDGE:
 			ControleTeste.navegador = "edge";
+			ControleTeste.processoNavegador = "edge.exe";
+			ControleTeste.processoDriver = "edgedriver.exe";
 			break;
 			
 		case IE:
 			ControleTeste.navegador = "ie";
+			ControleTeste.processoNavegador = "iexplore.exe";
+			ControleTeste.processoDriver = "IEDriverServer.exe";
 			break;
 			
 		default:
@@ -47,31 +57,26 @@ public class ControleTeste {
 	public static void abrirBrowser(String url) {
 		
 		try {
+			
+			if(DriverFactory.getInstance().getDriver() == null) {
+				encerrarProcesso(ControleTeste.processoNavegador);
+				encerrarProcesso(ControleTeste.processoDriver);
+			}
+			
 			switch (navegador) {
 			case "chrome":
-				encerrarProcesso("chrome.exe");
-				encerrarProcesso("chromedriver.exe");
-				
 				DriverFactory.getInstance().setChromeDriver(url);
 				break;
 				
 			case "firefox":
-				encerrarProcesso("firefox.exe");
-				encerrarProcesso("geckodriver.exe");
-				
 				DriverFactory.getInstance().setFirefoxDriver(url);
 				break;
 				
 			case "edge":
-				//TODO adicionar encerramento do processos do BROWSER e driver
-				
 				DriverFactory.getInstance().setEdgeDriver(url);
 				break;
 				
 			case "ie":
-				encerrarProcesso("iexplore.exe");
-				encerrarProcesso("IEDriverServer.exe");
-				
 				DriverFactory.getInstance().setInternetExplorerDriver(url);
 				break;
 				

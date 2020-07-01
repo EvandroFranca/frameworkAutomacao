@@ -25,30 +25,30 @@ public class DriverFactory {
 	}
 	
 	public void setChromeDriver(String url) {
-		if(driver == null) {
+		if(driver == null || !(driver instanceof ChromeDriver)) {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
-			driver.navigate().to(url);
 		}
+		driver.navigate().to(url);
 	}
 	
 	public void setFirefoxDriver(String url) {
-		if(driver == null) {
+		if(driver == null || !(driver instanceof FirefoxDriver)) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 			driver.manage().window().maximize();
-			driver.navigate().to(url);
 		}
+		driver.navigate().to(url);
 	}
 	
 	public void setInternetExplorerDriver(String url) {
 		if(driver == null) {
 			WebDriverManager.iedriver().setup();
 			driver = new InternetExplorerDriver();
-			driver.get(url);
 			driver.manage().window().maximize();
 		}
+		driver.get(url);
 	}
 	
 	public void setEdgeDriver(String url) {
@@ -56,8 +56,8 @@ public class DriverFactory {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 			driver.manage().window().maximize();
-			driver.navigate().to(url);
 		}
+		driver.navigate().to(url);
 	}
 	
 	public WebDriver getDriver() {
