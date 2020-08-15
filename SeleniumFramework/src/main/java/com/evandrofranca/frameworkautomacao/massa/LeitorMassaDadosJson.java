@@ -17,7 +17,7 @@ public class LeitorMassaDadosJson {
 	private boolean arquivoCarregado = false;
 	
 	/**
-	 * Construtor Padr„o da classe
+	 * Construtor Padr√£o da classe
 	 */
 	public LeitorMassaDadosJson() {
 	}
@@ -31,7 +31,7 @@ public class LeitorMassaDadosJson {
 	}
 	
 	/**
-	 * Efetua o carregamento do arquivo json (referente ao caso de teste) em memÛria
+	 * Efetua o carregamento do arquivo json (referente ao caso de teste) em mem√≥ria
 	 * @throws Exception
 	 */
 	public void carregarArquivo() throws Exception {
@@ -108,7 +108,7 @@ public class LeitorMassaDadosJson {
 			return path;
 		} catch (Exception e) {
 			System.err.println("Erro ao retornar caminho da massa de dados ...");
-			System.err.println("[Verifique se o CT est· na mesma estrutura da massa]");
+			System.err.println("[Verifique se o CT est√° na mesma estrutura da massa]");
 			return null;
 		}
 

@@ -49,7 +49,7 @@ public class ControleTeste {
 			break;
 			
 		default:
-			System.err.println("Navegador inv·lido");
+			System.err.println("Navegador inv√°lido");
 			break;
 		}
 	}
@@ -86,7 +86,7 @@ public class ControleTeste {
 		} catch(IOException e) {
 			
 		} catch (NullPointerException e) {
-			System.err.println("N„o foi determinado um navegador.\nDetermine um utilizando o mÈtodo determinarNavegador da classe ControleTeste");
+			System.err.println("N√£o foi determinado um navegador.\nDetermine um utilizando o m√©todo determinarNavegador da classe ControleTeste");
 			throw e;
 		}
 		

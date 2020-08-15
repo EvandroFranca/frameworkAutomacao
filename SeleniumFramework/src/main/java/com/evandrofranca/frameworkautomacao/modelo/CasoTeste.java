@@ -47,7 +47,7 @@ public abstract class CasoTeste implements ICasoTeste{
 		}
 		
 		if (nomeCaminhoClasseTeste == null) {
-			System.out.println("Erro ao localizar classe do caso de teste. Verifique se o nome est· dentro do padr„o CT + NUMEROS");
+			System.out.println("Erro ao localizar classe do caso de teste. Verifique se o nome est√° dentro do padr√£o CT + NUMEROS");
 			throw new Exception();
 		}
 		
@@ -62,11 +62,11 @@ public abstract class CasoTeste implements ICasoTeste{
 	@Test
 	public void iniciarCasoTeste() {
 		try {
-			System.out.println("Iniciando execuÁ„o do caso de teste");
+			System.out.println("Iniciando execu√ß√£o do caso de teste");
 			this.executarCasoTeste();
 			System.out.println("Caso de teste finalizado com sucesso");
 		}catch(Exception e) {
-			System.err.println("Falha na execuÁ„o do caso de teste");
+			System.err.println("Falha na execu√ß√£o do caso de teste");
 			assertFalse(true);
 		}
 	}
