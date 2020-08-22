@@ -10,9 +10,7 @@ import com.evandrofranca.frameworkautomacao.massa.LeitorMassaDadosJson;
 public class ControleTeste {
 	
 	private static ControleTeste instancia;
-	protected static String navegador;
-	protected static String processoNavegador;
-	protected static String processoDriver;
+	protected static Navegador navegador;
 	private LeitorMassaDadosJson leitorMassaDados;
 	
 	public static ControleTeste recuperarInstancia() {
@@ -23,35 +21,7 @@ public class ControleTeste {
 	}
 	
 	public static void determinarNavegador(Navegador navegador) {
-		switch (navegador) {
-		case CHROME:
-			ControleTeste.navegador = "chrome";
-			ControleTeste.processoNavegador = "chrome.exe";
-			ControleTeste.processoDriver = "chromedriver.exe";
-			break;
-			
-		case FIREFOX:
-			ControleTeste.navegador = "firefox";
-			ControleTeste.processoNavegador = "firefox.exe";
-			ControleTeste.processoDriver = "geckodriver.exe";
-			break;
-			
-		case EDGE:
-			ControleTeste.navegador = "edge";
-			ControleTeste.processoNavegador = "edge.exe";
-			ControleTeste.processoDriver = "edgedriver.exe";
-			break;
-			
-		case IE:
-			ControleTeste.navegador = "ie";
-			ControleTeste.processoNavegador = "iexplore.exe";
-			ControleTeste.processoDriver = "IEDriverServer.exe";
-			break;
-			
-		default:
-			System.err.println("Navegador inválido");
-			break;
-		}
+		ControleTeste.navegador = navegador;
 	}
 	
 	public static void abrirBrowser(String url) {
@@ -59,24 +29,24 @@ public class ControleTeste {
 		try {
 			
 			if(DriverFactory.getInstance().getDriver() == null) {
-				encerrarProcesso(ControleTeste.processoNavegador);
-				encerrarProcesso(ControleTeste.processoDriver);
+				encerrarProcesso(navegador.getProcessoNavegador());
+				encerrarProcesso(navegador.getProcessoDriver());
 			}
 			
 			switch (navegador) {
-			case "chrome":
+			case CHROME:
 				DriverFactory.getInstance().setChromeDriver(url);
 				break;
 				
-			case "firefox":
+			case FIREFOX:
 				DriverFactory.getInstance().setFirefoxDriver(url);
 				break;
 				
-			case "edge":
+			case EDGE:
 				DriverFactory.getInstance().setEdgeDriver(url);
 				break;
 				
-			case "ie":
+			case IE:
 				DriverFactory.getInstance().setInternetExplorerDriver(url);
 				break;
 				
